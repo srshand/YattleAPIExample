@@ -1,0 +1,60 @@
+@YattleAPI_HostAddress = http://localhost:5218
+@BearerToken = SuperSecretBearerToken123
+
+GET {{YattleAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+Authorization: Bearer {{BearerToken}}
+
+###
+
+GET {{YattleAPI_HostAddress}}/api/jobvacancies
+Accept: application/json
+Authorization: Bearer {{BearerToken}}
+
+###
+
+GET {{YattleAPI_HostAddress}}/api/jobvacancies/1
+Accept: application/json
+Authorization: Bearer {{BearerToken}}
+
+###
+
+POST {{YattleAPI_HostAddress}}/api/jobvacancies
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{BearerToken}}
+
+{
+  "jobTitle": "Junior QA Engineer",
+  "companyName": "QualityFirst Ltd",
+  "jobDescription": "Test and validate software products.",
+  "dateFirstAdvertised": "2024-06-01T00:00:00Z",
+  "closingDate": "2024-07-01T00:00:00Z",
+  "annualRemunerationGBP": 25000,
+  "companyBenefits": "Health insurance, training, flexible hours"
+}
+
+###
+
+PUT {{YattleAPI_HostAddress}}/api/jobvacancies/1
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer {{BearerToken}}
+
+{
+  "jobTitle": "Junior QA Engineer (Updated)",
+  "companyName": "QualityFirst Ltd",
+  "jobDescription": "Test and validate software products. Updated description.",
+  "dateFirstAdvertised": "2024-06-01T00:00:00Z",
+  "closingDate": "2024-07-15T00:00:00Z",
+  "annualRemunerationGBP": 26000,
+  "companyBenefits": "Health insurance, training, flexible hours, bonus"
+}
+
+###
+
+DELETE {{YattleAPI_HostAddress}}/api/jobvacancies/1
+Accept: application/json
+Authorization: Bearer {{BearerToken}}
+
+###
